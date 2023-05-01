@@ -1,0 +1,539 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+/* custom styles */
+
+/* global scrollbars */
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #F3F3D0; 
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #9096CE; 
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+/* root CSS Variables TBD */
+
+
+  @font-face {
+    font-family: 'CartaNueva';
+    src: url(assets/CartaNueva-Small.woff);
+  }
+  ::selection{
+    background-color: #FEC9F2;
+  }
+
+  html, body, * {
+      box-sizing: border-box;
+  }
+
+  body::-webkit-scrollbar {
+      display: none;
+  }
+
+ /* ---index layout--- */
+    
+  body {
+      color: black;
+      background-color: #F3F3D0;
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+
+  header {
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      display: flex;
+      justify-content: space-around;
+      padding: 20px;
+      width: 100%;
+  }
+  
+    nav{
+        width: 98%;
+        display: flex;
+        justify-content: space-between;
+    }
+  
+    nav a{
+      z-index: 2;
+        margin-right: 20px;
+        text-decoration: none;
+        font-family: 'CartaNueva', cursive;
+        font-size: 10vw;
+        color: #9096CE;
+        -webkit-text-stroke: 1px black;
+        -webkit-text-fill-color: #9096CE; 
+    }
+
+    nav a:hover {
+      color: white;
+      -webkit-text-fill-color: white;
+    }
+
+    /* work page h1 */
+    nav a.diff {
+      font-size: 24vw;
+      color: #FEC9F2;
+      -webkit-text-stroke: 1px black;
+      -webkit-text-fill-color: #FEC9F2;
+  }
+
+  main{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+  }
+
+
+  img{
+    width: 100%;
+  }
+
+
+  /* --- desktop index layout --- */
+
+  img:nth-of-type(1) {
+    grid-column: span 6;
+  }
+  img:nth-of-type(2) {
+    grid-area: 2 / 6;
+  }
+  img:nth-of-type(3) {
+    grid-area: 3 / 7 / 4 / 11;
+  }
+  img:nth-of-type(4) {
+    grid-column: span 6;
+    grid-row: 4;
+  }
+  div.color-block{
+    background-color: #C68E8E;
+    grid-area: 2 / 1 / 4 / 7;
+    z-index: -1;
+  }
+
+
+  
+
+ /* ---typography---- */
+
+  a{
+    color: #FEC9F2;
+  }
+
+  h1{
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-55%,-50%);
+    text-align: center;
+    font-family: 'CartaNueva', cursive;
+    font-size: 250px;
+    -webkit-text-stroke: 1px black;
+    color: #FEC9F2;
+    -webkit-text-fill-color: #FEC9F2; 
+  line-height: .5;
+}
+
+  h3{
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+
+
+  /* --info section-- */
+
+  section#info{
+    height: 100vh;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    margin: 40px;
+    gap: 20px;
+  }
+
+  div.bio{
+    font-family: 'Courier Prime', monospace;
+    letter-spacing: -.5px;
+    line-height: 1.2;
+  }
+
+  div.links{
+    font-family: 'Courier Prime', monospace;
+    letter-spacing: -.5px;
+    /* font-weight: 700; */
+    line-height: 1.2;
+    /* margin: 40px; */
+    display: flex;
+    gap: 20px;
+  }
+
+  button{
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #F3F3D0;
+    padding: 10px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  button:hover{
+    background-color: black;
+    color: #FEC9F2;
+    border: 2px solid #FEC9F2;
+  }
+
+  li{
+    border-bottom: 2px dotted black;
+    list-style-type: disc;
+    padding: 10px;
+  }
+
+  /* -----work page------ */
+
+  body#work-page main{
+    grid-template-columns: 1fr;
+  }
+
+  body#work-page header {
+    position: initial;
+  }
+
+  body#work-page h1 {
+    position: initial;
+    transform: translate(-20%,0);
+    text-align: center;
+    font-family: 'CartaNueva', cursive;
+    font-size: 25vw;
+    letter-spacing: -43px;
+    -webkit-text-stroke: 1px black;
+    color: #FEC9F2;
+    -webkit-text-fill-color: #FEC9F2;
+    line-height: .75;
+  }
+
+  div.work-filters{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  #studio-btn{
+    border-radius: 50%;
+  }
+
+  article.project{
+    height: 100vh;
+    background-size: cover;
+    /* background-position: center; */
+  }
+
+  a.project-wrapper{
+    text-decoration: none;
+  }
+
+  h2{
+    font-size: 10vw;
+    text-align: center;
+    line-height: .75;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: -1px;
+    color: #C68E8E;
+    -webkit-text-stroke: 1px black;
+    -webkit-text-fill-color:  #C68E8E; 
+  }
+
+  div.client,
+  div.date {
+    font-size: 2vw;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #C68E8E;
+    -webkit-text-stroke: 1px black;
+    -webkit-text-fill-color:  #C68E8E; 
+  }
+
+  div.metadata{
+    position: relative;
+    height: 80%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  footer.metadata{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    gap: 20px;
+    align-self: center;
+  }
+
+    /* -----project page template ------ */
+
+
+    .project-main{
+      display: block;
+      margin: 20px;
+    }
+
+    .project-header {
+      position: initial;
+    }
+
+    .project-header h1{
+      position: static;
+      font-size: initial;
+      line-height: inherit;
+      transform: translate(0,0);
+    }
+
+    .project-hero,
+    .project-desc {
+      margin: auto 120px;
+    }
+
+    .project-meta{
+      font-size: 30px;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .slide-title{
+      font-style: italic;
+    }
+
+    .slide-materials {
+      text-align: center;
+    }
+
+    .project-slides {
+      display: flex;
+      overflow-x: scroll;
+      margin: 40px 0;
+    }
+
+    .project-slides li{
+      list-style-type: none;
+      border: none;
+    }
+
+    .project-slides li img{
+      width: 100px;
+    }
+
+    .project-desc p {
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    p.attribute{
+      margin-top: 20px;
+      font-family: 'Courier Prime', monospace;
+      letter-spacing: -.5px;
+      line-height: 1.2;
+    }
+
+    h3.client{
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    h2.project-title{
+      font-size: 68px;
+      margin-bottom: 20px;
+    }
+
+
+
+
+    /* ----------- med breakpoint  ---------- */
+
+  @media only screen and (max-width: 850px) {
+    body{
+      background-color: #9096CE;
+    }
+
+     img:nth-of-type(1) {
+        grid-column: 6;
+      }
+      
+      div.color-block{
+        background-color: #F3F3D0;
+        grid-area: 2 / 1 / 4 / 7;
+        z-index: -1;
+      }
+  
+      img:nth-of-type(2) {
+        grid-area: 2 / 7 / 3/ 11 ;
+      }
+      img:nth-of-type(3) {
+        grid-area: 3 / 3 / 4 / 11;
+      }
+      img:nth-of-type(4) {
+        grid-column: span 2;
+        grid-row: 4;
+      }
+
+          /* header mobile styles */
+          nav a{
+            color: black;
+            -webkit-text-stroke: 1px black;
+            -webkit-text-fill-color: black; 
+        }
+    
+    
+        /* work page h1 */
+        nav a.diff {
+          color: #FEC9F2;
+          -webkit-text-stroke: 1px #FEC9F2;
+          -webkit-text-fill-color: #FEC9F2;
+      }
+  
+        h1{
+          top: 15%;
+          font-size: 185px;
+          transform: translate(-58%,-50%);
+          -webkit-text-fill-color: #FEC9F2;
+       -webkit-text-stroke: 1px #FEC9F2;
+        }
+
+        .project-hero,
+        .project-desc {
+          margin: auto 40px;
+        }
+
+        .project-desc{
+          height: 300px;
+          overflow-y: scroll;
+        }
+    
+        .project-desc::-webkit-scrollbar {
+          display: none;
+        }
+
+        div.client,
+        div.date{
+          font-size: 3.5vw;
+        }
+  }
+
+    /* ------------ small breakpoint  -------- */
+
+    @media only screen and (max-width: 550px) {
+      body{
+        background-color: black;
+        color: #F3F3D0;
+      }
+      
+      main{
+        display: block;
+      }
+
+      img{
+        vertical-align: top;
+      }
+
+ 
+      /* header mobile styles */
+      nav a{
+          color: white;
+          -webkit-text-stroke: 1px white;
+          -webkit-text-fill-color: white; 
+      }
+  
+  
+      /* work page h1 */
+      nav a.diff {
+        color: #FEC9F2;
+        -webkit-text-stroke: 1px #FEC9F2;
+        -webkit-text-fill-color: #FEC9F2;
+    }
+
+      h1{
+        top: 10%;
+          font-size: 110px;
+          transform: translate(-59%,-50%);
+        -webkit-text-fill-color: #9096CE;
+     -webkit-text-stroke: 1px #9096CE;
+      }
+
+      .project-hero,
+      .project-desc {
+        margin: auto 10px;
+      }
+
+      div.client,
+      div.date{
+        font-size: 5vw;
+      }
+
+    }
